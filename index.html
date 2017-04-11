@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+        </script>
+        <script>
+            var ws = new WebSocket('ws://192.168.0.173:3000', 'echo-protocol');
+            ws.onopen = function(event){
+                console.log(event);
+                ws.send("test");
+            };
+            ws.onmessage = function (event) {
+                console.log(event.data);
+            }
+        </script>
+    </head>
+
+    <body>
+    </body>
+</html>
