@@ -25,3 +25,7 @@ ws.onmessage = function(event){
 ``` javascript
 ws.send("message")
 ```
+
+# LAN or WAN setup
+
+You can easily make this WebSocket server accessible by routing port traffic to the host machine (3000 in my case).  I was able run steps 3-5 on multiple comuputers connecting to a single LAN node.
