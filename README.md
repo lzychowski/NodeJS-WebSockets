@@ -4,8 +4,8 @@ This repo contains a tech demo of WebSckets based on http://codular.com/node-web
 
 ## Setup
 
-1. Run npm install
-2. Run npm start
+1. Run `npm install`
+2. Run `node index.js`
 3. Instantiate WebSocket in your browser console
 
 ``` javascript
