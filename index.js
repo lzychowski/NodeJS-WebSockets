@@ -17,8 +17,8 @@ fs.readFile('./index.html', function(err, html){
 
     var WebSocketServer = require('websocket').server;
 
-    server.listen(3000, function() {
-        console.log((new Date()) + ' Server is listening on port 3000');
+    server.listen(3001, function() {
+        console.log((new Date()) + ' Server is listening on port 3001');
     });
 
     wsServer = new WebSocketServer({
@@ -27,6 +27,7 @@ fs.readFile('./index.html', function(err, html){
 
     var count = 0;
     var clients = {};
+    var map = {};
 
     wsServer.on('request', function(r){
 
@@ -46,6 +47,13 @@ fs.readFile('./index.html', function(err, html){
             for(var i in clients){
                 // Send a message to the client with the message
                 clients[i].sendUTF("Server's response");
+
+                if (clients[i] == this){
+                    map[i] = {
+                        client: clients[i],
+                        message: message
+                    }
+                }
             }
 
         });
