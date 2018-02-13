@@ -1,16 +1,25 @@
 # Node.js WebSocket Demo
 
-This repo contains a tech demo of WebSckets based on http://codular.com/node-web-sockets tutorial.
+This repo contains a tech demo of WebSckets based on http://codular.com/node-web-sockets tutorial using two different WebSocket npm packages.
+
+https://www.npmjs.com/package/ws
+https://www.npmjs.com/package/websocket
+
+In addition, `ws` version is compatible out of the box with Java WebSocket client outlined in https://www.eclipse.org/jetty/documentation/9.3.x/jetty-websocket-client-api.html tutorial.  Files from the tutorial are also present in this repository.
 
 ## Setup
 
 1. Run `npm install`
-2. Run `node index.js`
+2. Run `node websockets.js` or 'node `ws.js`
 3. Instantiate WebSocket in your browser console
 
+### JavaScript client
 ``` javascript
 var ws = new WebSocket('ws://localhost:3001', 'echo-protocol');
 ```
+
+### Java Client
+See java folder
 
 4. Bind server response message to console.log
 
